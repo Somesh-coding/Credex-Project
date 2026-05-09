@@ -1,4 +1,6 @@
-target/
+application.properties
 .env
-src/main/resources/application.properties
-firebase-service-account.json
+.env.local
+target
+node_modules
+.next
