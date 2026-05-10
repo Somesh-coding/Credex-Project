@@ -1,30 +1,35 @@
 # LANDING COPY
 
 ## Hero headline
-Stop overpaying for AI tools
+
+Stop overpaying for AI tools.
 
 ## Subheadline
-Audit your AI stack in 60 seconds and find cheaper plans, alternatives, and credit savings.
+
+Audit your AI stack in under 60 seconds and discover cheaper plans, alternatives, and credit savings.
 
 ## Primary CTA
+
 Run free audit
 
 ## Social proof
-Mocked: “Found $740/month in wasted AI spend before lunch.”
+
+“Found $740/month in unnecessary AI spend before lunch.”
 
 ## FAQ
 
 ### Is this free?
+
 Yes.
 
-### Do I need to create an account?
+### Do I need an account?
+
 No.
 
-### When do you ask for email?
-Only after showing value.
+### Is the pricing logic AI-generated?
 
-### Is the audit AI-generated?
-The math is rule-based. AI only writes the summary.
+No. The calculations are deterministic. AI is only used for summaries.
 
-### Is my public report private?
-Email and company details are stripped from public URLs.
+### Are public reports private?
+
+Email and company details are removed from public pages.

@@ -1,14 +1,24 @@
 # ECONOMICS
 
-Assumption: A converted Credex customer buys $10,000/year in discounted AI credits. If Credex keeps a 15% margin, one customer is worth about $1,500 gross profit/year.
+Assumption:
+A converted Credex customer purchases discounted AI credits worth around $10,000/year.
 
-Example funnel:
-- 1,000 audit visitors
-- 400 complete audits
-- 120 submit email
-- 20 book consultation
-- 5 buy credits
+If Credex keeps a 15% margin, one converted customer is worth roughly $1,500/year in gross profit.
 
-If acquisition is organic, CAC is mainly founder time. If 5 customers produce $7,500 gross profit, the tool is profitable as long as build and maintenance cost stays below that in the early phase.
+## Example funnel
 
-For $1M ARR in 18 months, Credex would need roughly 100 customers buying $10,000/year each, or fewer larger customers buying larger credit packages.
+* 1,000 landing page visitors
+* 400 completed audits
+* 120 email captures
+* 20 consultation conversations
+* 5 paying customers
+
+## Why the model works
+
+The audit itself is inexpensive to operate:
+
+* deterministic pricing logic
+* low AI token usage
+* lightweight infrastructure
+
+Most value comes from converting high-spend teams into procurement or credit customers.
