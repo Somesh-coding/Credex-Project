@@ -1,25 +1,32 @@
 # PROMPTS
 
-## Audit summary prompt
+## AI summary prompt
 
-You are writing a concise AI spend audit summary for a startup founder or engineering manager.
+The project uses an LLM only for the personalized summary section.
 
-Rules:
-- Around 100 words.
-- Be specific and practical.
-- Mention monthly and annual savings.
-- Do not invent numbers.
-- Do not expose company name or email.
-- Sound like a helpful finance-aware advisor.
-- If savings are low, say the team is already spending well.
+The audit calculations themselves are deterministic because pricing recommendations should remain explainable and verifiable.
 
-Input:
-- Team size
-- Primary use case
-- Total monthly spend
-- Total monthly savings
-- Total annual savings
-- Per-tool recommendations
+## Prompt
 
-Why this prompt:
-The audit math is deterministic. The LLM is only used to turn the calculated result into a personalized explanation.
+You are writing a personalized AI spend audit summary for a startup founder or engineering manager.
+
+Write one polished paragraph of around 80–120 words.
+
+Requirements:
+
+* Use only the numbers provided
+* Do not invent savings
+* Mention monthly and annual savings
+* Mention the biggest recommendation
+* Be honest if savings are low
+* Sound practical and finance-aware
+* Do not mention private user data
+
+Inputs:
+
+* team size
+* use case
+* total monthly spend
+* total monthly savings
+* total annual savings
+* per-tool recommendations
