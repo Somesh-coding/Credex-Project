@@ -1,58 +1,84 @@
 # Credex AI Spend Audit
 
-A free AI spend audit tool for startup founders and engineering managers. Users enter AI tools, plans, monthly spend, team size, and use case, then receive rule-based savings recommendations, an AI-generated summary, lead capture, and a shareable public URL.
+A free AI spend audit tool for startup founders and engineering managers.
 
-## Stack
-- Frontend: Next.js + TypeScript + Tailwind
-- Backend: Spring Boot
-- Database: Supabase Postgres
-- AI summary: Anthropic API with fallback template
-- Email: Resend API
+Users enter:
 
-## Quick start
+* AI tools
+* plans
+* monthly spend
+* seats
+* team size
+* primary use case
 
-### 1. Create Supabase tables
-Open Supabase → SQL Editor and run:
+The system then generates:
 
-```sql
-backend/supabase-schema.sql
-```
+* pricing recommendations
+* downgrade opportunities
+* alternative tool suggestions
+* AI-generated personalized summaries
+* public shareable report URLs
 
-### 2. Backend
-```bash
-cd backend
-cp src/main/resources/application.example.properties src/main/resources/application.properties
-```
+## Features
 
-Set:
+* Deterministic pricing engine
+* AI-generated summaries using OpenRouter
+* Public share pages
+* Open Graph previews
+* Lead capture
+* Transactional email sending with Resend
+* Supabase storage
+* Honeypot spam protection
+* Responsive UI
+* Local form persistence
 
-```properties
-supabase.enabled=true
-supabase.url=https://YOUR_PROJECT_REF.supabase.co
-supabase.service-role-key=YOUR_SERVICE_ROLE_KEY
-```
+## Tech stack
 
-Then run:
+### Frontend
 
-```bash
-mvn spring-boot:run
-```
+* Next.js
+* TypeScript
+* Tailwind CSS
 
-### 3. Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
+### Backend
+
+* Spring Boot
+* Java 17
+
+### Services
+
+* Supabase
+* OpenRouter
+* Resend
 
 ## Deployment
-- Backend: Render
-- Frontend: Vercel
-- DB: Supabase
 
-## Decisions
-1. Supabase was chosen because it is accepted by the assignment and provides a real Postgres backend.
-2. Audit math is hardcoded and deterministic because pricing logic should be explainable.
-3. AI is used only for the personalized summary.
-4. Lead data is stored separately from public audit display data.
-5. Public share pages use dynamic metadata for Open Graph previews.
+* Frontend: Vercel
+* Backend: Render
+* Database: Supabase
+
+## Why deterministic pricing logic
+
+The pricing logic is intentionally deterministic instead of AI-generated.
+
+Financial recommendations should remain:
+
+* explainable
+* traceable
+* verifiable
+* stable
+
+AI is used only for generating personalized summaries.
+
+## Public share pages
+
+Each audit gets a unique public URL.
+
+Public pages intentionally exclude:
+
+* email
+* company name
+* role
+* lead data
+
+Only savings and recommendation information is exposed publicly.
