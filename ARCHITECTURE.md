@@ -3,27 +3,46 @@
 ```mermaid
 flowchart TD
     A[Visitor] --> B[Next.js Frontend]
-    B --> C[Spring Boot API]
+    B --> C[Spring Boot Backend API]
     C --> D[Audit Engine]
-    C --> E[Anthropic Summary Service]
+    C --> E[OpenRouter AI Summary Service]
     C --> F[Supabase Postgres]
-    C --> G[Resend Email]
+    C --> G[Resend Email Service]
     B --> H[Public Share Page]
     H --> C
 ```
 
-## Data flow
-1. User enters AI tool spend.
-2. Frontend sends request to `POST /api/audits`.
-3. Backend calculates savings using deterministic rules.
-4. Backend calls Anthropic for a summary.
-5. If Anthropic fails, fallback summary is used.
-6. Audit is saved in Supabase with a public slug.
-7. Lead capture is saved separately using `POST /api/leads`.
-8. Public URL uses `GET /api/audits/public/{slug}` and never returns email/company details.
+## System overview
 
-## Why this stack
-Spring Boot keeps business logic, Supabase writes, AI API calls, and email sending secure. Supabase gives a real Postgres database with a simple REST API. Next.js is used for polished UI and dynamic Open Graph metadata.
+The frontend handles:
 
-## If handling 10k audits/day
-I would add Redis rate limiting, queue email sending, cache public audit reads, move pricing rules into versioned config, and add structured logs.
+* spend input
+* results rendering
+* lead capture
+* public share pages
+
+The backend handles:
+
+* pricing logic
+* AI summaries
+* Supabase writes
+* email sending
+* public audit retrieval
+
+## Audit flow
+
+1. User submits AI stack.
+2. Frontend calls `POST /api/audits`.
+3. Backend calculates deterministic savings.
+4. OpenRouter generates summary.
+5. If AI fails, fallback summary is used.
+6. Audit is stored with a public slug.
+7. Public page renders from slug.
+
+## Abuse protection
+
+The lead form uses a honeypot field called `website`.
+
+Bots usually fill every field automatically. If `website` is not empty, the backend rejects the request.
+
+This was chosen because it adds no friction for normal users.
