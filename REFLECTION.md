@@ -1,18 +1,32 @@
 # REFLECTION
 
-Fill this honestly after building.
+## Hardest bug
 
-## 1. Hardest bug
-TBD
+Deployment and AI integration were the hardest parts.
 
-## 2. Decision reversed
-TBD
+Gemini API initially failed because of quota limits and unsupported model issues. Switching to OpenRouter simplified the AI layer significantly.
 
-## 3. Week 2
-TBD
+## Decision I reversed
 
-## 4. AI usage
-TBD
+I originally planned to use AI for recommendation generation.
 
-## 5. Self-rating
-TBD
+Later I realized deterministic pricing logic produced more explainable and trustworthy outputs.
+
+## What I would improve
+
+With another week, I would:
+
+* add admin analytics
+* improve observability
+* support uploaded invoices
+* build richer pricing configs
+
+## AI usage
+
+AI was used for:
+
+* personalized summaries
+* debugging support
+* frontend iteration ideas
+
+The pricing logic itself remained deterministic.
